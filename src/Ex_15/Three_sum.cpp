@@ -1,8 +1,12 @@
 //
 // Created by  liyixuan on 2018-11-11.
 //
-// reference:
+// references:
 //      https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/
+//      http://www.cplusplus.com/reference/cstdlib/qsort/
+//      https://isocpp.org/wiki/faq/pointers-to-members
+//      https://stackoverflow.com/questions/2512978/how-to-delete-duplicate-vectors-within-a-multidimensional-vector
+//      https://stackoverflow.com/questions/9694838/how-to-implement-2d-vector-array
 //
 // result:
 //      pass 312 / 313
