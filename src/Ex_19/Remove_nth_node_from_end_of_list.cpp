@@ -45,12 +45,12 @@ int main() {
     b.next = &c;
     c.next = &d;
     d.next = &e;
-    e.next = NULL;
+    e.next = nullptr;
     int n;
     ListNode* p = &a;
     std::cin >> n;
     ListNode* res = s.removeNthFromEnd(p, n);
-    while (res != NULL) {
+    while (res != nullptr) {
         std::cout << res->val << "->";
         res = res->next;
     }
