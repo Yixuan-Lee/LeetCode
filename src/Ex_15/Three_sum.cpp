@@ -16,8 +16,10 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <set>
 
 using std::vector;
+using std::set;
 
 class Solution {
 public:
@@ -26,8 +28,9 @@ public:
         if (nums.size() <= 2)
             return res;
 
-        int l, r;
-        int size = nums.size();
+        unsigned long l, r;
+        unsigned long size = nums.size();
+        set<vector<int>> setVec;    // sets are container that store unique elements
         int k = 0;
 
         std::sort(nums.begin(), nums.end());
@@ -47,7 +50,10 @@ public:
                 if (nums[i] + nums[l] + nums[r] == 0) {
                     //std::cout << nums[i] << " " << nums[l] << " " << nums[r] << std::endl;
                     vector<int> v {nums[i], nums[l], nums[r]};
-                    res.push_back(v);
+//                    res.push_back(v);     // this will cause memory limited exceeded
+                    if (setVec.count(v) == 0) {
+                        setVec.insert(v);
+                    }
                     l++;
                 } else if (nums[i] + nums[l] + nums[r] < 0) {
                     l++;
@@ -57,9 +63,13 @@ public:
             }
         }
 
-        // remove duplicated element in res using unique
-        std::sort(res.begin(), res.end());
-        res.erase(std::unique(res.begin(), res.end()), res.end());
+        // remove duplicated element in res using unique (this will cause memory limited exceeded)
+//        std::sort(res.begin(), res.end());
+//        res.erase(std::unique(res.begin(), res.end()), res.end());
+
+        for (set<vector<int>>::iterator it = setVec.begin(); it != setVec.end(); ++it) {
+            res.push_back(*it);
+        }
 
         return res;
     }
