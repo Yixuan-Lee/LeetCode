@@ -7,10 +7,8 @@
 //      https://isocpp.org/wiki/faq/pointers-to-members
 //      https://stackoverflow.com/questions/2512978/how-to-delete-duplicate-vectors-within-a-multidimensional-vector
 //      https://stackoverflow.com/questions/9694838/how-to-implement-2d-vector-array
-//
-// result:
-//      pass 312 / 313
-//      last test : memory limit exceeded, but can get correct result on my laptop
+//      https://stackoverflow.com/questions/12863256/how-to-iterate-stdset
+//      http://www.cplusplus.com/reference/set/set/count/
 
 
 #include <iostream>
