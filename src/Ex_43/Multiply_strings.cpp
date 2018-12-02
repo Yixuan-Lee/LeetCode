@@ -3,7 +3,8 @@
 //
 // references:
 //      https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
-//
+//      https://zhidao.baidu.com/question/29859765.html
+
 
 #include <iostream>
 #include <vector>
