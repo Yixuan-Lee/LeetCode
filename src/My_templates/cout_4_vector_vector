@@ -1,0 +1,13 @@
+// declare a template for overloading the << operator for vector<vector<<T>>
+template<typename T>
+std::ostream &operator<< (const std::ostream &output, const vector<T> &vec) {
+    std::cout << "[" << std::endl;
+    for (const vector<int> &v : vec) {
+        std::cout << "\t[";
+        for (const auto &i : v) {
+            std::cout << i << ", ";
+        }
+        std::cout << "]" << std::endl;
+    }
+    std::cout << "]" << std::endl;
+}
