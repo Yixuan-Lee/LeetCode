@@ -45,7 +45,10 @@ public:
 
         vector<vector<int>> res;
         for (int i = 0; i < n; i++) {
-            res.push_back(vector<int> {});
+            // insert an empty row
+            res.emplace_back(
+            );
+            // insert the elements in the row
             for (int j = 0; j < n; j++) {
                 res[i].push_back(resArr[i][j]);
             }
@@ -56,7 +59,7 @@ public:
 
 // declare a template for overloading the << operator for vector<vector<<T>>
 template<typename T>
-std::ostream &operator<< (const std::ostream &output, const vector<T> &vec) {
+std::ostream &operator<< (std::ostream &output, const vector<T> &vec) {
     std::cout << "[" << std::endl;
     for (const vector<int> &v : vec) {
         std::cout << "\t[";
@@ -66,6 +69,7 @@ std::ostream &operator<< (const std::ostream &output, const vector<T> &vec) {
         std::cout << "]" << std::endl;
     }
     std::cout << "]" << std::endl;
+    return output;
 }
 
 
