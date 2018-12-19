@@ -1,5 +1,5 @@
 // references:
-//      https://stackoverflow.com/questions/936687/how-do-i-declare-a-2d-array-in-c-using-new
+//      https://leetcode.com/problems/word-search/discuss/27658/Accepted-very-short-Java-solution.-No-additional-space.
 
 
 #include <iostream>
@@ -12,98 +12,62 @@ using std::string;
 class Solution {
 public:
     bool exist(vector<vector<char>> &board, string word) {
-        m = static_cast<int> (board.size());
-        n = static_cast<int> (board[0].size());
-
-        string per;
-        bool **used = new bool *[m];
-        for (int i = 0; i < m; i++) {
-            used[i] = new bool[n];
-        }
+        auto m = static_cast<int> (board.size());
+        auto n = static_cast<int> (board[0].size());
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (isExist) {
-                    std::cout << "isExist = " << isExist << std::endl;
-                    return isExist;
-                }
-                if (board[i][j] == word[0]) {
-                    isExist = false;
-                    dfs(board, used, per, word, i, j, 0);
-                    initialize(used, m, n);
+                if (exist(board, i, j, word, 0)) {
+                    return true;
                 }
             }
         }
-
-        for (int i = 0; i < m; i++) {
-            delete[] used[i];
-        }
-        delete[] used;
-
-        std::cout << "isExist = " << isExist << std::endl;
-        return isExist;
+        return false;
     }
 
 private:
-    bool isExist;
-    int m;
-    int n;
+    bool exist(vector<vector<char>> &board, int x, int y, string word,
+            int currLen) {
+        if (currLen == word.length()) {
+            return true;
+        }
 
-    void dfs(const vector<vector<char>> &board, bool **used, string per,
-            string word, int x, int y, int curr) {
-        if (isExist) {
-            return;
+        if (x < 0 || y < 0 || x == board.size() || y == board[0].size()) {
+            return false;
         }
-        if (per == word) {
-            isExist = true;
-            return;
+        if (board[x][y] != word[currLen]) {
+            return false;
         }
-        if (x < 0 || y < 0 || x == m || y == n) {
-            return;
-        }
-        if (used[x][y]) {
-            return;
-        }
-        if (word[curr] != board[x][y]) {
-            return;
-        }
-        per.push_back(board[x][y]);
-        used[x][y] = true;
 
-        // go up
-        dfs(board, used, per, word, x - 1, y, curr + 1);
-        // go down
-        dfs(board, used, per, word, x + 1, y, curr + 1);
-        // go left
-        dfs(board, used, per, word, x, y - 1, curr + 1);
-        // go right
-        dfs(board, used, per, word, x, y + 1, curr + 1);
+        // XOR operation is used for checking if this position has been visited
+        // this can be achieved by creating a new array called "visited"
+//        board[x][y] ^= 256;
+        board[x][y] = '\0'; // removes the letter from the dictionary
 
-        // backtracking
-        used[x][y] = false;
-    }
+        bool isExist = exist(board, x + 1, y, word, currLen + 1)
+                       || exist(board, x - 1, y, word, currLen + 1)
+                       || exist(board, x, y + 1, word, currLen + 1)
+                       || exist(board, x, y - 1, word, currLen + 1);
+        // reset
+//        board[x][y] ^= 256;
+        board[x][y] = word[currLen];
 
-    void initialize(bool **used, int m, int n) {
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                used[i][j] = false;
-            }
-        }
+        return isExist;
     }
 };
 
 
 int main() {
     Solution s;
-    vector<vector<char>> board {
-            {'A', 'B', 'C', 'E'},
-            {'S', 'F', 'C', 'S'},
-            {'A', 'D', 'E', 'E'}
-    };
 //    vector<vector<char>> board {
-//            {'A', 'A'}
+//            {'A', 'B', 'C', 'E'},
+//            {'S', 'F', 'C', 'S'},
+//            {'A', 'D', 'E', 'E'}
 //    };
-    std::cout << s.exist(board, "ABCCED") << std::endl;
+    vector<vector<char>> board {
+            {'A', 'A'}
+    };
+    std::cout << s.exist(board, "AAA") << std::endl;
     return 0;
 }
 
