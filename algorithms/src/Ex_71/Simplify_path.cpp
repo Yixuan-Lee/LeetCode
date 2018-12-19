@@ -1,6 +1,6 @@
 // references:
 //      https://leetcode.com/problems/simplify-path/discuss/200362/C%2B%2B-stack-solution
-
+//      http://www.cplusplus.com/reference/sstream/istringstream/istringstream/
 
 #include <iostream>
 #include <sstream>  // istringstream
