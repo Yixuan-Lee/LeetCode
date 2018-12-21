@@ -1,6 +1,7 @@
 // references:
 //      https://leetcode.com/problems/decode-ways/discuss/30357/DP-Solution-(Java)-for-reference
-
+//      http://www.cplusplus.com/reference/string/string/substr/
+//      https://www.geeksforgeeks.org/converting-strings-numbers-cc/
 
 #include <iostream>
 #include <string>
