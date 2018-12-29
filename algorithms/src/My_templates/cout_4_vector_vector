@@ -1,8 +1,8 @@
 // declare a template for overloading the << operator for vector<vector<<T>>
 template<typename T>
-std::ostream &operator<< (std::ostream &output, const vector<T> &vec) {
+std::ostream &operator<<(std::ostream &output, const vector<vector<T>> &vec) {
     std::cout << "[" << std::endl;
-    for (const vector<int> &v : vec) {
+    for (const vector<T> &v : vec) {
         std::cout << "\t[";
         for (const auto &i : v) {
             std::cout << i << ", ";
