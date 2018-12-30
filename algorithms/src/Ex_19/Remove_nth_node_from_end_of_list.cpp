@@ -1,23 +1,20 @@
-//
-// Created by  liyixuan on 2018-11-14.
-//
-
 #include <iostream>
 
 struct ListNode {
     int val;
     ListNode *next;
-    ListNode(int x) : val(x), next(nullptr) {}
+
+    explicit ListNode(int x) : val(x), next(nullptr) {}
 };
 
 class Solution {
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
+    ListNode *removeNthFromEnd(ListNode *head, int n) {
         if (head == nullptr)
             return nullptr;
         int counter = 0;
-        ListNode* p1 = head;  // lead pointer
-        ListNode* p2 = head;  // follower pointer
+        ListNode *p1 = head;  // lead pointer
+        ListNode *p2 = head;  // follower pointer
         while (counter < n) {
             p1 = p1->next;
             counter++;
@@ -47,9 +44,9 @@ int main() {
     d.next = &e;
     e.next = nullptr;
     int n;
-    ListNode* p = &a;
+    ListNode *p = &a;
     std::cin >> n;
-    ListNode* res = s.removeNthFromEnd(p, n);
+    ListNode *res = s.removeNthFromEnd(p, n);
     while (res != nullptr) {
         std::cout << res->val << "->";
         res = res->next;

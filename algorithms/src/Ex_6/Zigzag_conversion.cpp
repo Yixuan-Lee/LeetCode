@@ -1,9 +1,7 @@
-//
-// Created by  liyixuan on 2018-11-15.
-//
 // references:
 //      https://leetcode.com/articles/zigzag-conversion/
 //      https://stackoverflow.com/questions/20461424/error-variable-length-array-of-non-pod-element-type-string
+
 
 #include <iostream>
 #include <string>
@@ -47,13 +45,13 @@ public:
         }
 
         // free the heap resources
-        delete [] rows;
+        delete[] rows;
 
         return result;
     }
 };
 
-int main () {
+int main() {
     Solution s;
     std::cout << s.convert("PAYPALISHIRING", 3) << std::endl;
     return 0;

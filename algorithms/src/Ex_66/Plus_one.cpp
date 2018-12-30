@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-07.
-//
-
 #include <iostream>
 #include <vector>
 
@@ -9,7 +5,7 @@ using std::vector;
 
 class Solution {
 public:
-    vector<int> plusOne (vector<int> &digits) {
+    vector<int> plusOne(vector<int> &digits) {
         if (digits.empty()) {
             return digits;
         }
@@ -37,7 +33,7 @@ public:
     }
 
 private:
-    void addLeadingOne (vector<int> &digit) {
+    void addLeadingOne(vector<int> &digit) {
         vector<int> res {1};
         for (int i : digit) {
             res.push_back(i);
@@ -48,7 +44,7 @@ private:
 
 // declare a template for overloading the << operator for vector<T>
 template<typename T>
-std::ostream &operator<< (std::ostream &output, const vector<T> &v) {
+std::ostream &operator<<(std::ostream &output, const vector<T> &v) {
     std::cout << "[";
     for (auto &i : v) {
         std::cout << i << ",";
@@ -57,7 +53,7 @@ std::ostream &operator<< (std::ostream &output, const vector<T> &v) {
     return output;
 }
 
-int main () {
+int main() {
     Solution s;
     vector<int> input {1, 9, 8, 9};
     vector<int> res = s.plusOne(input);

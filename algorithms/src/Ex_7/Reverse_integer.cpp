@@ -1,9 +1,6 @@
-//
-// Created by  liyixuan on 2018-11-10.
-//
-
 #include <iostream>
 #include <cmath>
+
 using std::cin;
 using std::cout;
 

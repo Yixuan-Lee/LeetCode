@@ -1,10 +1,8 @@
-//
-// Created by  liyixuan on 2018-11-12.
-//
 // references:
 //      https://leetcode.com/problems/integer-to-roman/discuss/192698/Solved-(in-Java)
 //      https://stackoverflow.com/questions/12731493/2d-array-with-two-different-datatypes
 //      http://www.cplusplus.com/reference/utility/pair/pair/
+
 
 #include <iostream>
 #include <string>
@@ -69,19 +67,19 @@ public:
     string intToRoman(int num) {
         string result = "";
         pair<int, string> charToNumMap[] {
-            {1000, "M"},
-            {900,  "CM"},
-            {500,  "D"},
-            {400,  "CD"},
-            {100,  "C"},
-            {90,   "XC"},
-            {50,   "L"},
-            {40,   "XL"},
-            {10,   "X"},
-            {9,    "IX"},
-            {5,    "V"},
-            {4,    "IV"},
-            {1,    "I"}
+                {1000, "M"},
+                {900,  "CM"},
+                {500,  "D"},
+                {400,  "CD"},
+                {100,  "C"},
+                {90,   "XC"},
+                {50,   "L"},
+                {40,   "XL"},
+                {10,   "X"},
+                {9,    "IX"},
+                {5,    "V"},
+                {4,    "IV"},
+                {1,    "I"}
         };
         int currIndex = 0;
         int mapSize = 13;

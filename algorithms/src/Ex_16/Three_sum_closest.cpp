@@ -1,9 +1,6 @@
-//
-// Created by  liyixuan on 2018-12-01.
-//
 // references:
 //      https://stackoverflow.com/questions/8690567/setting-an-int-to-infinity-in-c
-//
+
 
 #include <iostream>
 #include <vector>
@@ -14,7 +11,7 @@ using std::vector;
 
 class Solution {
 public:
-    int threeSumClosest (vector<int> &nums, int target) {
+    int threeSumClosest(vector<int> &nums, int target) {
         if (nums.size() < 3) {
             return -1;
         } else if (nums.size() == 3) {
@@ -81,7 +78,7 @@ public:
 };
 
 
-int main () {
+int main() {
     Solution s;
 
     vector<int> vec {-3, -2, -5, 3, -4};

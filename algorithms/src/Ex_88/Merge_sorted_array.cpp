@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-10.
-//
-
 #include <iostream>
 #include <vector>
 
@@ -9,7 +5,7 @@ using std::vector;
 
 class Solution {
 public:
-    void merge (vector<int> &nums1, int m, vector<int> &nums2, int n) {
+    void merge(vector<int> &nums1, int m, vector<int> &nums2, int n) {
         if (nums2.empty()) {
             return;
         }
@@ -37,7 +33,7 @@ public:
 
 // declare a template for overloading the << operator for vector<T>
 template<typename T>
-std::ostream &operator<< (std::ostream &output, const vector<T> &v) {
+std::ostream &operator<<(std::ostream &output, const vector<T> &v) {
     std::cout << "[";
     for (auto &i : v) {
         std::cout << i << ",";
@@ -46,7 +42,7 @@ std::ostream &operator<< (std::ostream &output, const vector<T> &v) {
     return output;
 }
 
-int main () {
+int main() {
     Solution s;
     vector<int> nums1 {1, 2, 3, 0, 0, 0};
     int m = 3;

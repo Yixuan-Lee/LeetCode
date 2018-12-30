@@ -1,9 +1,7 @@
-//
-// Created by  liyixuan on 2018-11-07.
-//
 // reference:
 //      https://gist.github.com/edwardtsau/5625679
 //      http://www.cplusplus.com/forum/beginner/96862/
+
 
 #include <iostream>
 #include <list>
@@ -11,14 +9,15 @@
 struct ListNode {
     int val;
     ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
+
+    explicit ListNode(int x) : val(x), next(nullptr) {}
 };
 
 class Solution {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* l3 = nullptr;
-        ListNode** pnext = &l3;     // pnext is a pointer pointing to result ListNode pointer l3 (*pnext = l3)
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+        ListNode *l3 = nullptr;
+        ListNode **pnext = &l3;     // pnext is a pointer pointing to result ListNode pointer l3 (*pnext = l3)
 
         int carry = 0;
         int result = 0;
@@ -29,7 +28,7 @@ public:
             result = sum % 10;
             carry = sum / 10;
 
-            ListNode* &new_node = *pnext;   // new_node is a reference to the pointer (*pnext)
+            ListNode *&new_node = *pnext;   // new_node is a reference to the pointer (*pnext)
             new_node = new ListNode(result);
             pnext = &(new_node->next);  // pnext is a pointer pointing to the address of (new_node->next)
 
@@ -45,8 +44,8 @@ public:
 };
 
 int main() {
-    ListNode* l1;
-    ListNode* l2;
+    ListNode *l1;
+    ListNode *l2;
     /* example 1 */
 //    ListNode a(2), b(4), c(3);
 //    a.next = &b;
@@ -106,8 +105,8 @@ int main() {
     l1 = &a;
     l2 = &x;
     Solution s;
-    ListNode* result = s.addTwoNumbers(l1, l2);
-    for (ListNode* l = result; l != nullptr; l = l->next) {
+    ListNode *result = s.addTwoNumbers(l1, l2);
+    for (ListNode *l = result; l != nullptr; l = l->next) {
         if (l->next == nullptr)
             std::cout << l->val;
         else

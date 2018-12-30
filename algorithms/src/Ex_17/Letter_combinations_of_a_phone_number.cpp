@@ -1,8 +1,6 @@
-//
-// Created by  liyixuan on 2018-11-17.
-//
 // reference:
 //      http://www.cnblogs.com/grandyang/p/4452220.html
+
 
 #include <iostream>
 #include <string>
@@ -15,10 +13,12 @@ class Solution {
 public:
     vector<string> letterCombinations(string digits) {
         if (digits.empty()) {
-            return { };
+            return {};
         }
         vector<string> res {""};
-        string dict[] {"abc", "def", "ghi", "jkl", "mno", "qprs", "tuv", "wxyz"};
+        string dict[] {
+                "abc", "def", "ghi", "jkl", "mno", "qprs", "tuv", "wxyz"
+        };
         for (int i = 0; i < digits.length(); i++) {
             vector<string> temp;
             string str = dict[digits[i] - '0' - 2];
@@ -37,7 +37,7 @@ int main() {
     Solution s;
     string digits = "23";
     vector<string> result = s.letterCombinations(digits);
-    for (const string& str : result) {
+    for (const string &str : result) {
         std::cout << str << ", " << std::endl;
     }
     return 0;

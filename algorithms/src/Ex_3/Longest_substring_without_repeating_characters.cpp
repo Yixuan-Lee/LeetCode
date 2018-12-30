@@ -1,8 +1,6 @@
-//
-// Created by  liyixuan on 2018-11-08.
-//
 // references:
 //      https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/
+
 
 #include <iostream>
 #include <string>

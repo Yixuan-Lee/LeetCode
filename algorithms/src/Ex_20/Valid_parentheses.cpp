@@ -1,14 +1,9 @@
-//
-// Created by  liyixuan on 2018-11-11.
-//
-
 #include <iostream>
 #include <stack>
 #include <string>
 
 using std::string;
 using std::stack;
-
 
 class Solution {
 public:

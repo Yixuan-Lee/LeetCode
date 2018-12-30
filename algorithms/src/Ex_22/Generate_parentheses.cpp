@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-02.
-//
 // references:
 //      https://leetcode.com/problems/generate-parentheses/solution/
 //      https://stackoverflow.com/questions/14737078/how-to-copy-a-stack
@@ -16,7 +13,7 @@ using std::string;
 
 class Solution {
 public:
-    vector<string> generateParenthesis (int n) {
+    vector<string> generateParenthesis(int n) {
         vector<string> res;
         if (n <= 0) {
             return res;
@@ -27,7 +24,7 @@ public:
 
 private:
     void
-    backtracking (vector<string> &res, const string &curr, int openNum,
+    backtracking(vector<string> &res, const string &curr, int openNum,
             int closeNum, int n) {
         if (curr.length() == 2 * n) {
             res.push_back(curr);
@@ -44,7 +41,7 @@ private:
 };
 
 
-int main () {
+int main() {
     Solution s;
     vector<string> res = s.generateParenthesis(3);
     for (const string &str : res) {

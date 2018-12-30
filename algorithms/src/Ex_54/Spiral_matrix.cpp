@@ -1,11 +1,9 @@
-//
-// Created by  liyixuan on 2018-12-03.
-//
 // references:
 //      https://stackoverflow.com/questions/2448380/c-expected-constant-expression
 //      https://stackoverflow.com/questions/1946830/multidimensional-variable-size-array-in-c
 //      https://blog.csdn.net/qq_38386316/article/details/76026451
 //      book :《刘汝佳算法入门竞赛经典（第二版）》 —— 蛇形填数
+
 
 #include <iostream>
 #include <vector>
@@ -14,7 +12,7 @@ using std::vector;
 
 class Solution {
 public:
-    vector<int> spiralOrder (vector<vector<int>> &matrix) {
+    vector<int> spiralOrder(vector<vector<int>> &matrix) {
         vector<int> res;
         if (matrix.empty()) {
             return res;
@@ -73,7 +71,7 @@ public:
     }
 
 private:
-    bool allFalseInFlag (bool **flag, const int rows, const int cols) {
+    bool allFalseInFlag(bool **flag, const int rows, const int cols) {
         for (size_t i = 0; i < rows; i++) {
             for (size_t j = 0; j < cols; j++) {
                 if (flag[i][j]) {
@@ -87,7 +85,7 @@ private:
 
 // declare a template for overloading the << operator for vector<int>
 template<typename T>
-std::ostream &operator<< (std::ostream &output, const vector<T> &v) {
+std::ostream &operator<<(std::ostream &output, const vector<T> &v) {
     std::cout << "[";
     for (auto &i : v) {
         std::cout << i << ",";
@@ -97,7 +95,7 @@ std::ostream &operator<< (std::ostream &output, const vector<T> &v) {
 }
 
 
-int main () {
+int main() {
     Solution s;
     vector<vector<int>> input = {
             {1, 2,  3,  4},

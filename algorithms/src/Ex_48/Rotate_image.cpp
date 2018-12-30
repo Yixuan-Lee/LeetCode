@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-02.
-//
 // references:
 //      https://leetcode.com/problems/rotate-image/discuss/18879/AC-Java-in-place-solution-with-explanation-Easy-to-understand.
 
@@ -13,7 +10,7 @@ using std::vector;
 
 class Solution {
 public:
-    void rotate (vector<vector<int>> &matrix) {
+    void rotate(vector<vector<int>> &matrix) {
         if (matrix.size() <= 1) {
             return;
         }
@@ -38,7 +35,7 @@ public:
 };
 
 
-int main () {
+int main() {
     Solution s;
     vector<vector<int>> input {
             {15, 13, 2,  5},

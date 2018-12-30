@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-20.
-//
-
 #include <iostream>
 #include <string>
 
@@ -22,7 +18,8 @@ public:
         for (int i = 0; i < length; i++) {
             if (haystack[i] == needle[j]) {
                 int k = i;
-                while (k < length && j < needle.length() && haystack[k] == needle[j]) {
+                while (k < length && j < needle.length()
+                       && haystack[k] == needle[j]) {
                     k++;
                     j++;
                 }
@@ -42,4 +39,3 @@ int main() {
     std::cout << s.strStr("aaa", "aaaa") << std::endl;
     return 0;
 }
-

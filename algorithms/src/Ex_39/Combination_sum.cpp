@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-24.
-//
 // reference:
 //      https://leetcode.com/problems/combination-sum/discuss/16496/Accepted-16ms-c%2B%2B-solution-use-backtracking-easy-understand.
 
@@ -12,7 +9,7 @@ using std::vector;
 
 class Solution {
 public:
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+    vector<vector<int>> combinationSum(vector<int> &candidates, int target) {
         vector<vector<int>> res;
         if (!target) {
             return res;
@@ -23,8 +20,9 @@ public:
     }
 
 private:
-    void findCombinations(vector<int>& candidates, int target, vector<vector<int>>& res,
-            vector<int>& combination, int beginPosition) {
+    void findCombinations(vector<int> &candidates, int target,
+            vector<vector<int>> &res,
+            vector<int> &combination, int beginPosition) {
         if (target < 0) {
             return;
         }
@@ -34,7 +32,8 @@ private:
         }
         for (int i = beginPosition; i < candidates.size(); i++) {
             combination.push_back(candidates[i]);
-            findCombinations(candidates, target - candidates[i], res, combination, i);
+            findCombinations(
+                    candidates, target - candidates[i], res, combination, i);
             combination.pop_back();
         }
     }
@@ -45,9 +44,9 @@ int main() {
     vector<int> candidates {8, 7, 4, 3};
     int target = 11;
     vector<vector<int>> res = s.combinationSum(candidates, target);
-    for (const vector<int>& v : res) {
+    for (const vector<int> &v : res) {
         std::cout << '[';
-        for (const int&i : v) {
+        for (const int &i : v) {
             std::cout << i << ", ";
         }
         std::cout << ']' << std::endl;

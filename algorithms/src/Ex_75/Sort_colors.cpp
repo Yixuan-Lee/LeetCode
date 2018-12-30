@@ -1,5 +1,6 @@
 // references:
-//      0ms solution sample
+//      sample 0ms submission
+
 
 #include <iostream>
 #include <vector>

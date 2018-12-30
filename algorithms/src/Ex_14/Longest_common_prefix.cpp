@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-11.
-//
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -11,7 +7,7 @@ using std::vector;
 
 class Solution {
 public:
-    string longestCommonPrefix(vector<string>& strs) {
+    string longestCommonPrefix(vector<string> &strs) {
         if (strs.empty())
             return "";
         string longestStr = "";

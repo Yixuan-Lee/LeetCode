@@ -1,8 +1,6 @@
-//
-// Created by  liyixuan on 2018-12-02.
-//
 // references:
 //      https://en.cppreference.com/w/cpp/language/lambda
+
 
 #include <iostream>
 #include <vector>
@@ -11,7 +9,7 @@ using std::vector;
 
 class Solution {
 public:
-    vector<int> searchRange (vector<int> &nums, int target) {
+    vector<int> searchRange(vector<int> &nums, int target) {
         vector<int> res {-1, -1};
         if (nums.empty()) {
             return res;
@@ -71,7 +69,7 @@ public:
     }
 
 private:
-    int binarySearch (vector<int> &nums, int target, int left, int right) {
+    int binarySearch(vector<int> &nums, int target, int left, int right) {
         while (left <= right) {
             int mid = (left + right) / 2;
             if (nums[mid] == target) {
@@ -87,7 +85,7 @@ private:
 };
 
 
-int main () {
+int main() {
     Solution s;
     vector<int> vec {1};
     int target = 1;

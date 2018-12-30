@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-20.
-//
-
 #include <iostream>
 #include <cmath>
 

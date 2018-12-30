@@ -1,8 +1,6 @@
-//
-// Created by  liyixuan on 2018-11-15.
-//
 // reference:
 //      https://leetcode.com/articles/container-with-most-water/
+
 
 #include <iostream>
 #include <vector>
@@ -12,7 +10,7 @@ using std::vector;
 
 class Solution {
 public:
-    int maxArea(vector<int>& height) {
+    int maxArea(vector<int> &height) {
         if (height.size() < 2) {
             return 0;
         }

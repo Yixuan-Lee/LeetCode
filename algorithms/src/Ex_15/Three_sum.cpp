@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-11.
-//
 // references:
 //      https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/
 //      http://www.cplusplus.com/reference/cstdlib/qsort/
@@ -21,7 +18,7 @@ using std::set;
 
 class Solution {
 public:
-    vector<vector<int>> threeSum (vector<int> &nums) {
+    vector<vector<int>> threeSum(vector<int> &nums) {
         vector<vector<int>> res;
         if (nums.size() <= 2) {
             return res;
@@ -75,7 +72,7 @@ public:
     }
 };
 
-int main () {
+int main() {
     Solution s;
     vector<int> nums {
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

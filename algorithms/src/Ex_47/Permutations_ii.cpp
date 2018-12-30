@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-27.
-//
 // references:
 //      https://leetcode.com/problems/permutations-ii/discuss/18596/A-simple-C%2B%2B-solution-in-only-20-lines
 //      https://stackoverflow.com/questions/1041620/whats-the-most-efficient-way-to-erase-duplicates-and-sort-a-vector
@@ -13,7 +10,7 @@ using std::vector;
 
 class Solution {
 public:
-    vector<vector<int>> permuteUnique(vector<int>& nums) {
+    vector<vector<int>> permuteUnique(vector<int> &nums) {
         if (nums.empty()) {
             return res;
         }
@@ -30,7 +27,7 @@ private:
     vector<vector<int>> res;
     unsigned long nums_size = 0;
 
-    void backtracking(vector<int>& nums, int start) {
+    void backtracking(vector<int> &nums, int start) {
         if (start == nums_size - 1) {
             res.push_back(nums);
             return;
@@ -52,9 +49,9 @@ int main() {
     Solution s;
     vector<int> vec {1, 3, 2};
     vector<vector<int>> res = s.permuteUnique(vec);
-    for (const vector<int>& v : res) {
+    for (const vector<int> &v : res) {
         std::cout << '[';
-        for (const int&i : v) {
+        for (const int &i : v) {
             std::cout << i << ", ";
         }
         std::cout << ']' << std::endl;

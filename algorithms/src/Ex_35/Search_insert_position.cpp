@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-22.
-//
 // reference:
 //      https://leetcode.com/problems/search-insert-position/discuss/15080/My-8-line-Java-solution
 
@@ -12,7 +9,7 @@ using std::vector;
 
 class Solution {
 public:
-    int searchInsert(vector<int>& nums, int target) {
+    int searchInsert(vector<int> &nums, int target) {
         if (nums.empty()) {
             return 0;
         }

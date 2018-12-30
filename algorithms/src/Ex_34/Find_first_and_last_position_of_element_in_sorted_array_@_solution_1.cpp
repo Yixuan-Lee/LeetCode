@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-02.
-//
-
 #include <iostream>
 #include <vector>
 
@@ -9,7 +5,7 @@ using std::vector;
 
 class Solution {
 public:
-    vector<int> searchRange (vector<int> &nums, int target) {
+    vector<int> searchRange(vector<int> &nums, int target) {
         vector<int> res {-1, -1};
         if (nums.empty()) {
             return res;
@@ -31,7 +27,7 @@ public:
     }
 
 private:
-    int binarySearch (vector<int> &nums, int target) {
+    int binarySearch(vector<int> &nums, int target) {
         int l = 0;
         int r = static_cast<int>(nums.size() - 1);
         while (l <= r) {
@@ -49,7 +45,7 @@ private:
 };
 
 
-int main () {
+int main() {
     Solution s;
     vector<int> vec {1};
     int target = 1;

@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-21.
-//
-
 #include <iostream>
 #include <vector>
 
@@ -9,7 +5,7 @@ using std::vector;
 
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
+    int search(vector<int> &nums, int target) {
         if (nums.empty()) {
             return -1;
         }

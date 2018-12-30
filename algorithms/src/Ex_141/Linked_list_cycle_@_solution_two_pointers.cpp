@@ -63,6 +63,3 @@ int main() {
     std::cout << s.hasCycle(nullptr) << std::endl;  // false
     return 0;
 }
-
-
-

@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-19.
-//
 // references:
 //      https://stackoverflow.com/questions/875103/how-do-i-erase-an-element-from-stdvector-by-index
 
@@ -12,7 +9,7 @@ using std::vector;
 
 class Solution {
 public:
-    int removeElement (vector<int> &nums, int val) {
+    int removeElement(vector<int> &nums, int val) {
         if (nums.empty()) {
             return 0;
         }
@@ -26,7 +23,7 @@ public:
     }
 };
 
-int main () {
+int main() {
     Solution s;
     vector<int> a {3, 2, 2, 3};
     int end = s.removeElement(a, 2);

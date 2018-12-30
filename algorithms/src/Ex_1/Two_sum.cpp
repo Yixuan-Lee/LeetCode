@@ -1,21 +1,19 @@
-//
-// Created by liyixuan on 2018-11-07.
-//
 // reference:
 //      https://stackoverflow.com/questions/42850924/leetcode-twosum-solution
 //      https://stackoverflow.com/questions/15451287/what-does-iterator-second-mean
 
+
 #include <iostream>
 #include <map>
 #include <vector>
+
 using std::vector;
 using std::map;
 
-
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        map<int,int> m;
+    vector<int> twoSum(vector<int> &nums, int target) {
+        map<int, int> m;
         int idx = 0;
         for (int i = 0; i < nums.size(); i++) {
             int complement = target - nums[i];

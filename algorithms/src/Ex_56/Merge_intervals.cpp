@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-09.
-//
 // references:
 //      https://www.geeksforgeeks.org/sorting-vector-of-pairs-in-c-set-1-sort-by-first-and-second/
 
@@ -14,14 +11,14 @@ struct Interval {
     int start;
     int end;
 
-    Interval () : start(0), end(0) {}
+    explicit Interval() : start(0), end(0) {}
 
-    Interval (int s, int e) : start(s), end(e) {}
+    explicit Interval(int s, int e) : start(s), end(e) {}
 };
 
 class Solution {
 public:
-    vector<Interval> merge (vector<Interval> &intervals) {
+    vector<Interval> merge(vector<Interval> &intervals) {
         if (intervals.empty()) {
             return intervals;
         }
@@ -49,13 +46,13 @@ public:
     }
 
 private:
-    static bool sortByFirst (const Interval &i1, const Interval &i2) {
+    static bool sortByFirst(const Interval &i1, const Interval &i2) {
         return i1.start < i2.start;
     }
 };
 
 
-int main () {
+int main() {
     Solution s;
     Interval i1(1, 4);
     Interval i2(2, 3);

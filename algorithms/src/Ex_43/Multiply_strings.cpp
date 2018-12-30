@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-01.
-//
 // references:
 //      https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
 //      https://zhidao.baidu.com/question/29859765.html
@@ -14,7 +11,7 @@ using std::vector;
 
 class Solution {
 public:
-    string multiply (string num1, string num2) {
+    string multiply(string num1, string num2) {
         int m = static_cast<int>(num1.length());
         int n = static_cast<int>(num2.length());
         int *pos = new int[m + n];
@@ -51,7 +48,7 @@ public:
 };
 
 
-int main () {
+int main() {
     Solution s;
     string s1 = "123", s2 = "45";
     std::cout << s.multiply(s1, s2) << std::endl;

@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-21.
-//
 // reference:
 //      http://www.cnblogs.com/grandyang/p/4563153.html
 
@@ -15,15 +12,15 @@ public:
         // sum area of two rectangles
         int sum = (C - A) * (D - B) + (H - F) * (G - E);
         // if there is no overlap
-        if (  (E >= C)
-           || (F >= D)
-           || (B >= H)
-           || (A >= G)) {
+        if ((E >= C)
+            || (F >= D)
+            || (B >= H)
+            || (A >= G)) {
             return sum;
         }
         // if there is an overlap
         int overlap_length = min(C, G) - max(A, E); // x axis
-        int overlap_width  = min(D, H) - max(B, F); // y axis
+        int overlap_width = min(D, H) - max(B, F); // y axis
         int overlap = overlap_length * overlap_width;
         sum = sum - overlap;
         return sum;

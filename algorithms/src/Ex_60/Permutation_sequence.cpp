@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-08.
-//
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -11,7 +7,7 @@ using std::vector;
 
 class Solution {
 public:
-    string getPermutation (int n, int k) {
+    string getPermutation(int n, int k) {
         vector<char> chars;
         for (int i = 1; i <= n; i++) {
             chars.push_back(static_cast<char &&> ('0' + i));
@@ -25,7 +21,7 @@ private:
     string res;
     int currentK {};
 
-    void backtracking (int n, int k, vector<char> &chars, vector<char> &per) {
+    void backtracking(int n, int k, vector<char> &chars, vector<char> &per) {
         if (per.size() == chars.size()) {
             currentK++;
             if (currentK == k) {
@@ -53,7 +49,7 @@ private:
 };
 
 
-int main () {
+int main() {
     Solution s;
     string res = s.getPermutation(9, 136371);
     std::cout << res << std::endl;

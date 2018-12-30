@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-03.
-//
 // references:
 //      https://www.geeksforgeeks.org/find-four-numbers-with-sum-equal-to-given-sum/
 //      https://www.geeksforgeeks.org/find-four-elements-that-sum-to-a-given-value-set-2/
@@ -15,7 +12,7 @@ using std::set;
 
 class Solution {
 public:
-    vector<vector<int>> fourSum (vector<int> &nums, int target) {
+    vector<vector<int>> fourSum(vector<int> &nums, int target) {
         vector<vector<int>> res;
         if (nums.size() <= 3) {
             return res;
@@ -69,7 +66,7 @@ public:
 };
 
 
-int main () {
+int main() {
     Solution s;
     vector<int> nums {0, 0, 0, 0};
     int target = 1;

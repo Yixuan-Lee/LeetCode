@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-10.
-//
-
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -27,7 +23,7 @@ public:
         if (!isdigit(str[i]))
             return 0;
         // store the numerical characters until meeting a non-numerical character
-        for ( ; i < str.length() && isdigit(str[i]); i++, j++) {
+        for (; i < str.length() && isdigit(str[i]); i++, j++) {
             num[j] = str[i];
         }
         // calculate

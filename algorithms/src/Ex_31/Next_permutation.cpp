@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-21.
-//
 // references:
 //      https://leetcode.com/articles/next-permutation/
 //      http://www.cplusplus.com/reference/algorithm/reverse/
@@ -9,6 +6,7 @@
 //      https://stackoverflow.com/questions/671423/c-stl-vectors-get-iterator-from-index/6938397
 //      https://stackoverflow.com/questions/12308243/trying-to-use-qsort-with-vector
 
+
 #include <iostream>
 #include <vector>
 #include <cstdlib>
@@ -16,13 +14,13 @@
 using std::vector;
 using std::reverse;
 
-int compare(const void* a, const void* b) {
-    return (*(int*) a - *(int*) b);
+int compare(const void *a, const void *b) {
+    return (*(int *) a - *(int *) b);
 }
 
 class Solution {
 public:
-    void nextPermutation(vector<int>& nums) {
+    void nextPermutation(vector<int> &nums) {
         if (nums.empty()) {
             return;
         }
@@ -56,7 +54,6 @@ private:
         vec[j] = temp;
     }
 };
-
 
 
 int main() {

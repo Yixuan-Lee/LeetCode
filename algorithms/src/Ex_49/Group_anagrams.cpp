@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-02.
-//
 // references:
 //      https://stackoverflow.com/questions/4951796/how-to-reverse-an-stdstring
 //      http://www.cplusplus.com/reference/map/map/insert/
@@ -17,7 +14,7 @@ using std::map;
 
 class Solution {
 public:
-    vector<vector<string>> groupAnagrams (vector<string> &strs) {
+    vector<vector<string>> groupAnagrams(vector<string> &strs) {
         vector<vector<string>> res;
         if (strs.empty()) {
             return res;
@@ -59,7 +56,7 @@ public:
 };
 
 
-int main () {
+int main() {
     Solution s;
 
     vector<string> input {"eat", "tea", "tan", "ate", "nat", "bat"};

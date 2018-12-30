@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-07.
-//
 // references:
 //      https://stackoverflow.com/questions/5029840/convert-char-to-int-in-c-and-c
 
@@ -16,7 +13,7 @@ using std::stack;
 
 class Solution {
 public:
-    string addBinary (string a, string b) {
+    string addBinary(string a, string b) {
         if (a.empty() && b.empty()) {
             return "";
         }
@@ -83,7 +80,7 @@ public:
 };
 
 
-int main () {
+int main() {
     Solution s;
     string a = "1111";
     string b = "1111";

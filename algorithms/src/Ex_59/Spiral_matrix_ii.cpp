@@ -1,9 +1,7 @@
-//
-// Created by  liyixuan on 2018-12-06.
-//
 // references:
 //      https://blog.csdn.net/qq_38386316/article/details/76026451
 //      book :《刘汝佳算法入门竞赛经典（第二版）》 —— 蛇形填数
+
 
 #include <iostream>
 #include <vector>
@@ -12,7 +10,7 @@ using std::vector;
 
 class Solution {
 public:
-    vector<vector<int>> generateMatrix (int n) {
+    vector<vector<int>> generateMatrix(int n) {
         if (n <= 0) {
             return vector<vector<int>>();
         }
@@ -59,7 +57,7 @@ public:
 
 // declare a template for overloading the << operator for vector<vector<<T>>
 template<typename T>
-std::ostream &operator<< (std::ostream &output, const vector<T> &vec) {
+std::ostream &operator<<(std::ostream &output, const vector<T> &vec) {
     std::cout << "[" << std::endl;
     for (const vector<int> &v : vec) {
         std::cout << "\t[";
@@ -73,7 +71,7 @@ std::ostream &operator<< (std::ostream &output, const vector<T> &vec) {
 }
 
 
-int main () {
+int main() {
     Solution s;
     vector<vector<int>> res = s.generateMatrix(1);
     std::cout << res << std::endl;

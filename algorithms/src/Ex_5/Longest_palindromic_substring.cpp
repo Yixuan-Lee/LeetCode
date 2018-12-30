@@ -1,10 +1,8 @@
-//
-// Created by  liyixuan on 2018-11-13.
-//
 // reference:
 //      https://leetcode.com/articles/longest-palindromic-substring/
 //      https://www.programcreek.com/2013/12/leetcode-solution-of-longest-palindromic-substring-java/
 //      http://www.cplusplus.com/reference/string/string/substr/
+
 
 #include <iostream>
 #include <string>
@@ -28,9 +26,10 @@ public:
         bool dp[length][length];
         string longest;
         for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length - i; j++) {  // i is the starting position
+            // i is the starting position
+            for (int j = 0; j < length - i; j++) {
                 int k = j + i;      // k is the ending position
-                if (s[j] == s[k] && (k - j <= 2 || dp[j+1][k-1])) {
+                if (s[j] == s[k] && (k - j <= 2 || dp[j + 1][k - 1])) {
                     dp[j][k] = true;
 
                     if (k - j + 1 > lengthOfLP) {

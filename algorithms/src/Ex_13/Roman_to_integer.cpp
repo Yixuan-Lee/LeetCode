@@ -1,7 +1,3 @@
-//
-// Created by  liyixuan on 2018-11-12.
-//
-
 #include <iostream>
 #include <string>
 
@@ -13,10 +9,10 @@ public:
         int value = 0;
         int length = s.length();
         for (int i = 0; i < length; i++) {
-            switch(s[i]) {
+            switch (s[i]) {
                 case 'I':
-                    if ((i < length - 1 && s[i+1] != 'V')
-                        && (i < length - 1 && s[i+1] != 'X')) {
+                    if ((i < length - 1 && s[i + 1] != 'V')
+                        && (i < length - 1 && s[i + 1] != 'X')) {
                         value += 1;
                     } else if (i < length - 1) {
                         value -= 1;
@@ -28,8 +24,8 @@ public:
                     value += 5;
                     break;
                 case 'X':
-                    if ((i < length - 1 && s[i+1] != 'L')
-                        && (i < length - 1 && s[i+1] != 'C')) {
+                    if ((i < length - 1 && s[i + 1] != 'L')
+                        && (i < length - 1 && s[i + 1] != 'C')) {
                         value += 10;
                     } else if (i < length - 1) {
                         value -= 10;
@@ -41,8 +37,8 @@ public:
                     value += 50;
                     break;
                 case 'C':
-                    if ((i < length - 1 && s[i+1] != 'D')
-                        && (i < length - 1 && s[i+1] != 'M')) {
+                    if ((i < length - 1 && s[i + 1] != 'D')
+                        && (i < length - 1 && s[i + 1] != 'M')) {
                         value += 100;
                     } else if (i < length - 1) {
                         value -= 100;

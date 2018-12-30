@@ -1,6 +1,3 @@
-//
-// Created by  liyixuan on 2018-12-11.
-//
 // references:
 //      https://leetcode.com/problems/sqrtx/discuss/25066/Solve-this-problem-with-Binary-Search
 
@@ -10,7 +7,7 @@
 
 class Solution {
 public:
-    int mySqrt (int x) {
+    int mySqrt(int x) {
         int left = 1;
         int right = x;
         int ans = 0;
@@ -29,7 +26,7 @@ public:
 };
 
 
-int main () {
+int main() {
     Solution s;
     int input = 0;
     std::cout << s.mySqrt(input) << std::endl;

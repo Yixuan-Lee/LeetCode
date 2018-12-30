@@ -111,4 +111,3 @@ int main() {
     std::cout << s.exist(board, "ABCCED") << std::endl;
     return 0;
 }
-

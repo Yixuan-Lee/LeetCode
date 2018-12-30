@@ -23,4 +23,3 @@ int main() {
     std::cout << s.singleNumber(input) << std::endl;
     return 0;
 }
-
