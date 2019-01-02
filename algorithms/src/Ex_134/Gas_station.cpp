@@ -1,5 +1,6 @@
 // references:
 //      https://en.cppreference.com/w/cpp/algorithm/sort
+//      https://www.geeksforgeeks.org/greedy-algorithms/
 
 
 #include <iostream>
