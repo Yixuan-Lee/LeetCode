@@ -1,13 +1,11 @@
 // references:
-//      Ex_94: Binary_tree_inorder_traversal.cpp
+//      https://leetcode.com/submissions/detail/198785611/ (sample 12ms submission)
 
 
 #include <iostream>
 #include <stack>
-#include <queue>
 
 using std::stack;
-using std::queue;
 
 struct TreeNode {
     int val;
@@ -20,60 +18,37 @@ struct TreeNode {
 class BSTIterator {
 public:
     explicit BSTIterator(TreeNode *root) {
-        TreeNode *it = root;
-        stack<TreeNode *> st;
-
-        while (it) {
-            if (it->left) {
-                // left child is not empty
-                // push the current node and move it to its left child
-                st.push(it);
-                it = it->left;
-            } else {
-                // left child is empty
-                // check its right child
-                if (it->right != nullptr) {
-                    // right child is not empty
-                    // push the root node and value
-                    values.push(it->val);
-                    it = it->right;
-                } else {
-                    // left and right children are empty
-
-                    values.push(it->val);
-                    while (it->right == nullptr && !st.empty()) {
-                        it = st.top();
-                        st.pop();
-                        values.push(it->val);
-                    }
-
-                    if (it->right == nullptr) {
-                        break;
-                    } else {
-                        it = it->right;
-                    }
-                }
-            }
+        TreeNode *curr = root;
+        // move curr to the most left node, and push the intermediate parent nodes
+        while (curr != nullptr) {
+            parents.push(curr);
+            curr = curr->left;
         }
     }
 
     /** @return the next smallest number */
     int next() {
-        if (!values.empty()) {
-            int returnValue = values.front();
-            values.pop();
-            return returnValue;
+        if (hasNext()) {
+            TreeNode *curr = parents.top();
+            parents.pop();
+            int value = curr->val;
+            curr = curr->right;
+            while (curr != nullptr) {
+                parents.push(curr);
+                curr = curr->left;
+            }
+            return value;
         }
         return -1;
     }
 
     /** @return whether we have a next smallest number */
     bool hasNext() {
-        return !values.empty();
+        return !parents.empty();
     }
 
 private:
-    queue<int> values;
+    stack<TreeNode *> parents;
 };
 
 /**
@@ -84,17 +59,26 @@ private:
  */
 
 int main() {
-    auto *root = new TreeNode(3);
-    TreeNode n1(2), n2(1), n3(4), n4(5), n5(6);
+    auto *root = new TreeNode(7);
+    TreeNode n1(3), n2(15), n3(9), n4(20);
     root->left = &n1;
-    n1.left = &n2;
-    root->right = &n4;
-    n4.left = &n3;
-    n4.right = &n5;
-    auto *obj = new BSTIterator(root);
-    int param_1 = obj->next();
-    bool param_2 = obj->hasNext();
-    std::cout << param_1 << std::endl;      // 1
-    std::cout << param_2 << std::endl;      // 1
+    root->right = &n2;
+    n2.left = &n3;
+    n2.right = &n4;
+    auto *iterator = new BSTIterator(root);
+    std::cout << iterator->next() << std::endl;             // 3
+    std::cout << iterator->next() << std::endl;             // 7
+    std::cout << (iterator->hasNext() ? "true" : "fasle")
+              << std::endl;                                 // true
+    std::cout << iterator->next() << std::endl;             // 9
+    std::cout << (iterator->hasNext() ? "true" : "fasle")
+              << std::endl;                                 // true
+    std::cout << iterator->next() << std::endl;             // 15
+    std::cout << (iterator->hasNext() ? "true" : "fasle")
+              << std::endl;                                 // true
+    std::cout << iterator->next() << std::endl;             // 20
+    std::cout << (iterator->hasNext() ? "true" : "fasle")
+              << std::endl;                                 // false;
+
     return 0;
 }
