@@ -21,17 +21,17 @@ public:
 int main() {
     Solution s;
 
-    std::cout << s.trailingZeroes(3) << std::endl;      // 0
+    std::cout << s.trailingZeroes(3) << std::endl;              // 0
 
-    std::cout << s.trailingZeroes(5) << std::endl;      // 1
+    std::cout << s.trailingZeroes(5) << std::endl;              // 1
 
-    std::cout << s.trailingZeroes(10) << std::endl;     // 2
+    std::cout << s.trailingZeroes(10) << std::endl;             // 2
 
-    std::cout << s.trailingZeroes(30) << std::endl;     // 7
+    std::cout << s.trailingZeroes(30) << std::endl;             // 7
 
-    std::cout << s.trailingZeroes(50) << std::endl;     // 12
+    std::cout << s.trailingZeroes(50) << std::endl;             // 12
 
-    std::cout << s.trailingZeroes(1808548329) << std::endl;     // 7
+    std::cout << s.trailingZeroes(1808548329) << std::endl;     // 452137076
 
     return 0;
 }
