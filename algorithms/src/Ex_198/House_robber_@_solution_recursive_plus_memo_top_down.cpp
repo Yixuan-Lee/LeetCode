@@ -13,7 +13,6 @@ public:
         auto size = static_cast<int> (nums.size());
         // initialize the memo with all -1
         memo = vector<int>(static_cast<unsigned long> (size), -1);
-
         return rob(nums, size - 1);
     }
 
