@@ -11,8 +11,13 @@ class Solution {
 public:
     int rob(vector<int> &nums) {
         auto size = static_cast<int> (nums.size());
+        if (size == 0) {
+            return 0;
+        }
+
         // initialize the memo with all -1
         memo = vector<int>(static_cast<unsigned long> (size), -1);
+
         return rob(nums, size - 1);
     }
 

@@ -13,6 +13,7 @@ public:
         if (nums.empty()) {
             return 0;
         }
+
         // prev1 and prev2 optimize the memo array in Horse_robber_@_solution_iterative_plus_memo_bottom_up.cpp
         int prev1 = 0;      // store the maximum value of the first (i) horses
         int prev2 = 0;      // store the maximum value of the first (i - 1) horses

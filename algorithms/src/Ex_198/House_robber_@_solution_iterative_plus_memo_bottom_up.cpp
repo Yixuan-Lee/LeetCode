@@ -14,6 +14,7 @@ public:
         if (size == 0) {
             return 0;
         }
+
         vector<int> memo;
         memo.reserve(nums.size() + 1);
         memo[0] = 0;        // maximum value of first 0 horse is 0
