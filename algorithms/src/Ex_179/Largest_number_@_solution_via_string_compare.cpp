@@ -1,5 +1,6 @@
 // references:
 //      https://leetcode.com/articles/largest-number/
+//      http://www.cplusplus.com/reference/string/string/compare/
 
 
 #include <iostream>
