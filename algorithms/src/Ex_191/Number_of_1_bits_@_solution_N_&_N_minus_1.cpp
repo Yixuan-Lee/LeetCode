@@ -12,7 +12,10 @@ class Solution {
 public:
     int hammingWeight(uint32_t n) {
         int r = n ? 1 : 0;
+        std::cout << n << std::endl;        // for debugging
         while (n &= (n - 1)) {
+            std::cout << n << std::endl;    // for debugging
+
             // n & (n - 1), remove the least-significant 1
             // remove 1 until the number n becomes 0
             r++;
