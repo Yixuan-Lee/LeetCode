@@ -15,7 +15,7 @@ public:
             if ((n & mask) != 0) {
                 bits++;
             }
-            mask <<= 1;
+            mask <<= 1;     // shift the mask to the left by one
         }
         return bits;
     }
