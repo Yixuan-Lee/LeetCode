@@ -16,7 +16,7 @@ public:
             return ans;
         }
 
-        // store occurance time for all 10-letter-long sequences
+        // store occurrence time for all 10-letter-long sequences
         unordered_map<string, int> hash;
         for (int i = 0; i <= length - 10; i++) {
             string sub = s.substr(static_cast<unsigned long> (i), 10);
@@ -24,13 +24,11 @@ public:
                 hash[sub] = 1;
             } else {
                 hash[sub]++;
-            }
-        }
-
-        // push all string that occurs more than once to the returned vector
-        for (auto &it : hash) {
-            if (it.second > 1) {
-                ans.push_back(it.first);
+                
+                if (hash[sub] == 2) {
+                    // push all string that occurs more than once to the returned vector
+                    ans.push_back(sub);
+                }
             }
         }
 
