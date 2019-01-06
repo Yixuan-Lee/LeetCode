@@ -1,5 +1,5 @@
 # references:
-#     https://leetcode.com/problems/rank-scores/discuss/53094/Simple-Short-Fast
+#     https://leetcode.com/problems/rank-scores/discuss/53094/Simple-Short-Fast  (good solution article)
 
 
 # Write your MySQL query statement below
