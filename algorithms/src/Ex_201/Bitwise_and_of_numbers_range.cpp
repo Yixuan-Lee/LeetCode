@@ -13,6 +13,7 @@ public:
             n >>= 1;
             count++;
         }
+
         return (m <<= count);
     }
 };
