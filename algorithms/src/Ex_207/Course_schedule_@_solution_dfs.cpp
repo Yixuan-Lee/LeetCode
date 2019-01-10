@@ -16,35 +16,14 @@ public:
         // graph[i]: nodes that contributes in-degree of node i
         vector<unordered_set<int>> graph = makeGraph(numCourses,
                 prerequisites);
-        // degrees[i]: how many degrees the node i contributes
-        vector<int> degrees = computeInDegree(graph);
-        // record the node that is tested to avoid redundant iterations (by user myih's comment)
+        // record the visited nodes in the current DFS visit
+        vector<bool> onPath(static_cast<unsigned long> (numCourses), false);
+        // record the all visited nodes
         vector<bool> visited(static_cast<unsigned long> (numCourses), false);
 
         for (int i = 0; i < numCourses; i++) {
-            if (visited[i]) {
-                // if we have already visited node i and reduce its neighbors' in-degree,
-                // then we test the next node i + 1
-                continue;
-            }
-            int j;
-            for (j = 0; j < numCourses; j++) {
-                if (degrees[j] == 0) {
-                    // found one node which in-degree is 0
-                    break;
-                }
-            }
-            if (j == numCourses) {
-                // if all nodes' in-degree are not 0,
-                // then there must be a cycle in the graph
+            if (!visited[i] && dfsIncludeCycle(graph, i, onPath, visited)) {
                 return false;
-            }
-            // set in-degree of node j to be -1
-            degrees[j] = -1;
-            visited[j] = true;
-            // then reduce the in-degrees of j's neighbors by 1
-            for (int neighbor : graph[j]) {
-                degrees[neighbor]--;
             }
         }
 
@@ -64,17 +43,34 @@ private:
         return graph;
     }
 
-    vector<int> computeInDegree(vector<unordered_set<int>> &graph) {
-        vector<int> degrees(graph.size(), 0);
-//        int i = 0;
-        for (const unordered_set<int> &neighbors : graph) {
-            for (int neighbor : neighbors) {
-                degrees[neighbor]++;
-            }
-//            degrees[i++] = static_cast<int> (neighbors.size());
+    /**
+     * determine if there is a cycle in the graph based on DFS visit
+     *
+     * @param graph graph
+     * @param node  current visited node
+     * @param onPath
+     * @param visited
+     * @return return true if the graph has cycle, otherwise return false
+     */
+    bool dfsIncludeCycle(const vector<unordered_set<int>> &graph, int node,
+            vector<bool> &onPath, vector<bool> &visited) {
+        if (onPath[node]) {
+            // if it meets a node which was visited in the current process of dfs visit,
+            // then it means a cycle is detected, so it is not a DAG (directed acyclic graph)
+            return true;
         }
 
-        return degrees;
+        onPath[node] = true;
+        visited[node] = true;
+        for (int neighbor : graph[node]) {
+            if (dfsIncludeCycle(graph, neighbor, onPath, visited)) {
+                // continue to test a cycle, return true if there is
+                return true;
+            }
+        }
+        onPath[node] = false;   // reset the node to unvisited for current dfs visit
+
+        return false;   // graph has no cycle
     }
 };
 
