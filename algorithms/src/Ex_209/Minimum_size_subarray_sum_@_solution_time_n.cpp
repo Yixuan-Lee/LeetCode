@@ -28,10 +28,11 @@ public:
             miniLen++;
             if (sum >= s) {
                 hash[idx] = miniLen;
-                sum = sum - nums[idx] - nums[i];
+                sum = sum - nums[idx]
+                      - nums[i];    // subtract the value of the heading element and trailing element
                 i--;
-                idx++;
-                miniLen -= 2;
+                idx++;              // add the heading element index
+                miniLen -= 2;       // minimen length - 2
             }
         }
 
