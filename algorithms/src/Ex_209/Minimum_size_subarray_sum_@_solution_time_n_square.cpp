@@ -48,7 +48,7 @@ int main() {
 
     nums = vector<int> {1, 2, 3, 4, 5};
     target = 15;
-    std::cout << s.minSubArrayLen(target, nums) << std::endl;   // 3
+    std::cout << s.minSubArrayLen(target, nums) << std::endl;   // 5
 
     return 0;
 }
