@@ -1,15 +1,14 @@
 #include <iostream>
 #include <string>
-#include <set>
 
 using std::string;
-using std::set;
 
 class Trie {
 public:
     /** Initialize your data structure here. */
     Trie() {
-        root = new Node("m");
+        root = new Node(
+                "m");   // 'm' is the 13th character, try to make the tree balanced
     };
 
     /** Inserts a word into the trie. */
