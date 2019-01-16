@@ -1,3 +1,7 @@
+// references:
+//      Cannot use std::sort to sort a set: https://stackoverflow.com/questions/13385348/sorting-sets-using-stdsort
+
+
 #include <iostream>
 #include <vector>
 #include <unordered_map>
@@ -9,6 +13,9 @@ using std::unordered_map;
 class Solution {
 public:
     bool containsNearbyDuplicate(vector<int> &nums, int k) {
+        // at first, I wanted to declare unordered_map<int, set<int>> hash
+        // but due to I cannot sort set, so i changed to vector<int>
+        //
         // first: number value
         // second: indices where nums[i] equals to the number value
         unordered_map<int, vector<int>> hash;
