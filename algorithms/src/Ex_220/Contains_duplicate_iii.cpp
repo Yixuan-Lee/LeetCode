@@ -23,18 +23,19 @@ public:
         }
         // sort the nums[0...k] elements
         std::sort(per.begin(), per.end());
-        // prove that differences between the nums[0...k] elements are bigger than t
+        // prove that differences in the nums[0...k] elements are all bigger than t
+        // otherwise, return true directly
         for (int i = 0; i < range; i++) {
             if (std::abs(per[i + 1] - per[i]) <= t) {
                 return true;
             }
         }
 
-        // slide the window right and delete the del
+        // slide the window right and delete the del in per
         for (int j = k + 1; j < nums.size(); j++) {
-            // delete the del
+            // delete the del in per
             per.erase(std::remove(per.begin(), per.end(), del), per.end());
-            // set the new delete value for next time
+            // set the new delete value for next slide time
             del = nums[j - k];
 //            // push the new element
 //            per.push_back(nums[j]);
@@ -47,7 +48,7 @@ public:
 //                }
 //            }
             vector<long> newPer;
-            bool push = true;
+            bool push = true;   // indicator for push the new element nums[j] for once
             for (long i : per) {
                 if (std::abs(i - nums[j]) <= t) {
                     return true;
@@ -63,9 +64,14 @@ public:
                     }
                 }
             }
+
+            // if all elements in per are smaller than news[j],
+            // then push nums[j] at the end of newPer
             if (per[per.size() - 1] < nums[j]) {
-                per.push_back(nums[j]);
+                newPer.push_back(nums[j]);
             }
+
+            // update vector per
             per = newPer;
         }
 
