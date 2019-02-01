@@ -12,9 +12,15 @@ private:
         if (curr == 1 || curr == 2 || curr == 3) {
             return turn;
         }
+        if (curr == 4) {
+            return !turn;
+        }
 
-        return canWinNim(curr - 1, !turn) || canWinNim(curr - 2, !turn)
-               || canWinNim(curr - 3, !turn);
+        bool f1 = turn && canWinNim(curr - 1, !turn);
+        bool f2 = turn && canWinNim(curr - 2, !turn);
+        bool f3 = turn && canWinNim(curr - 3, !turn);
+
+        return f1 || f2 || f3;
     }
 };
 
@@ -22,9 +28,9 @@ private:
 int main() {
     Solution s;
 
-    std::cout << s.canWinNim(4) << std::endl;   // 0
-
     std::cout << s.canWinNim(5) << std::endl;   // 1
+
+    std::cout << s.canWinNim(4) << std::endl;   // 0
 
     std::cout << s.canWinNim(64) << std::endl;   // 0
 
