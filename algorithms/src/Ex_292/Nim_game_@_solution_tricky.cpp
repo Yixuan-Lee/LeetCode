@@ -19,6 +19,8 @@ int main() {
 
     std::cout << s.canWinNim(5) << std::endl;   // 1
 
+    std::cout << s.canWinNim(12) << std::endl;   // 0
+
     std::cout << s.canWinNim(64) << std::endl;   // 0
 
     std::cout << s.canWinNim(65) << std::endl;   // 1
