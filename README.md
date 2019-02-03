@@ -4,6 +4,10 @@
 
 ### Join in if you'd like to practice together! 
 
-It's free to use your favourite programming languages, and please create source files under the right folder, thanks:D
+Feel free to use your favourite programming languages, and please commit source files under the right folder, thanks:~)
 
-### Happy New Year's day 2019!🎇🎆
+### Happy Spring Festival for 2019!🎇 
+
+Keep healthy, stay foolish
+
+### Happy New Year's day 2019!🎆
