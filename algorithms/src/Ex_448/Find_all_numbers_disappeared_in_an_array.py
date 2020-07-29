@@ -3,6 +3,8 @@ from typing import List
 
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        # make the nums[index] negative for index in nums
+        # the positive indices correspond to the disappeared values
         for i in range(len(nums)):
             index = abs(nums[i]) - 1
             nums[index] = -abs(nums[index])
