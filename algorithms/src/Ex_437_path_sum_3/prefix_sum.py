@@ -34,12 +34,20 @@ class Solution:
             return 0
 
         current_sum += curr.val
+        # number of valid path ended by the current node
         num_path_to_curr = prefix_sum.get(current_sum - target, 0) + (current_sum == target)
+        # update the prefix sum map so that the children nodes will use the new prefix sum map
         prefix_sum[current_sum] = prefix_sum.get(current_sum, 0) + 1
+        # accumulate the 3 possibilities:
+        #   1. number of valid paths ended by the current node
+        #   2. number of valid paths including the current node and going to left branch
+        #   3. number of valid paths including the current node and going to right branch
         result = num_path_to_curr \
                  + self.find_path_sum(curr.left, target, current_sum, prefix_sum) \
                  + self.find_path_sum(curr.right, target, current_sum, prefix_sum)
+        # when backtracking (going from children node back to parent node), restore the prefix sum map
         prefix_sum[current_sum] = prefix_sum.get(current_sum) - 1
+
         return result
 
 
