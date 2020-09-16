@@ -1,5 +1,5 @@
 // references:
-//      Ex_94: Binary_tree_inorder_traversal.cpp
+//      Ex_94_binary_tree_inorder_traversal: Binary_tree_inorder_traversal.cpp
 
 
 #include <iostream>
