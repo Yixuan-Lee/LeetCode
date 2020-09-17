@@ -3,7 +3,8 @@ Reference:
 https://leetcode.com/problems/path-sum-iii/discuss/91877/C%2B%2B-5-Line-Body-Code-DFS-Solution
 
 Time complexity: O(N^2)
-Space complexity: O(1)
+Space complexity: O(Height)
+
 """
 
 # Definition for a binary tree node.
