@@ -1,6 +1,6 @@
 """
 Idea:
-pure brute force
+calculate the sum of all possible subarrays
 
 Time complexity: O(n^3)
 Space complexity: O(1)
