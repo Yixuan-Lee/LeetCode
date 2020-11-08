@@ -9,7 +9,7 @@ there are two cases:
        consider two sub-cases:
           1.1 LIS1 containing the current element
           1.2 LIS2 not containing the current element
-       we return the max(LIS1 + 1, LIS2)
+       we return the max(LIS1, LIS2)
 
     2. if current element < previous element
        we only return LIS2

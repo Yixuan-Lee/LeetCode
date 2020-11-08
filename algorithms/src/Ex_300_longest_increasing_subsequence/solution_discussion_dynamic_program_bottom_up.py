@@ -7,7 +7,7 @@ bottom-up dynamic programming
 this method relies on the fact that the longest increasing sub-sequence possible upto the i^{th}
 index in a given array is independent of the elements coming later on in the array.
 Thus, if we know the length of the LIS upto i^{th} index, we can figure out the length of the LIS
-possible by including the (i+1)^{th} element based on the elements with indices jj such that
+possible by including the (i+1)^{th} element based on the elements with indices j such that
 0 <= j <= (i + 1)
 
 dp[i] represents the length of the longest increasing sub-sequence possible considering the array elements
@@ -33,10 +33,11 @@ class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         if not nums or len(nums) == 0:
             return 0
+        # dp[i] represents how many numbers in the LIS till the index i (inclusive)
         dp = [1] * len(nums)
-        for i in range(1, len(nums)):
+        for i in range(1, len(nums)):   # consider the index i as the last number's index
             max_length = 0
-            for j in range(i):
+            for j in range(i):  # scan from 0 to i-1 and update the max length of LIS till j (inclusive) where max number in LIS < nums[i]
                 if nums[i] > nums[j]:
                     max_length = max(max_length, dp[j])
             dp[i] = max_length + 1
